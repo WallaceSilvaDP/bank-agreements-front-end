@@ -1,0 +1,37 @@
+<app-page-header
+  [title]="'Contratos'"
+  [subtitle]="'Gerencie contratos e parcelas em aberto'"
+/>
+
+<mat-card class="filter-card">
+
+  <mat-card-content>
+
+    <div class="filters">
+
+      <mat-form-field appearance="outline">
+        <mat-label>CPF</mat-label>
+        <input matInput />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Cliente</mat-label>
+        <input matInput />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Contrato</mat-label>
+        <input matInput />
+      </mat-form-field>
+
+      <button mat-flat-button>
+        Buscar
+      </button>
+
+    </div>
+
+  </mat-card-content>
+
+</mat-card>
+
+<app-contract-table />

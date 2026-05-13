@@ -1,0 +1,43 @@
+<mat-nav-list>
+
+  <div class="profile-card">
+
+    <img
+      class="profile-image"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnaTX0RRzTfBVN_t3oCUxOFlbGBOGGwWxG0w&s"
+      alt="Perfil"
+    />
+
+    <div class="profile-info">
+      <span class="name">
+        Wallace Silva
+      </span>
+
+      <span class="role">
+        Analista de Cobrança
+      </span>
+    </div>
+
+  </div>
+
+  <a mat-list-item routerLink="/dashboard">
+    <mat-icon matListItemIcon>dashboard</mat-icon>
+    <span matListItemTitle>Dashboard</span>
+  </a>
+
+  <a mat-list-item routerLink="/contracts">
+    <mat-icon matListItemIcon>description</mat-icon>
+    <span matListItemTitle>Contratos</span>
+  </a>
+
+  <a mat-list-item routerLink="/agreements">
+    <mat-icon matListItemIcon>handshake</mat-icon>
+    <span matListItemTitle>Acordos</span>
+  </a>
+
+  <a mat-list-item routerLink="/billets">
+    <mat-icon matListItemIcon>receipt_long</mat-icon>
+    <span matListItemTitle>Boletos</span>
+  </a>
+
+</mat-nav-list>

@@ -1,0 +1,14 @@
+.layout-container {
+  height: calc(100vh - 64px);
+}
+
+.sidenav {
+  width: 240px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.content {
+  padding: 24px;
+  background: #f5f7fa;
+  min-height: 100%;
+}
