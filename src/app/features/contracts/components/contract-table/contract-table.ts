@@ -1,8 +1,17 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+
+import { CommonModule } from '@angular/common';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+
+import { Contract } from '../../../../shared/models/contracts/contract.model';
 
 @Component({
   selector: 'app-contract-table',
@@ -10,44 +19,30 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     MatTableModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    CommonModule,
   ],
   templateUrl: './contract-table.html',
   styleUrl: './contract-table.scss'
 })
 export class ContractTable {
 
-  displayedColumns = [
-    'customer',
-    'document',
-    'contract',
-    'balance',
-    'status',
+  @Output()
+  generateAgreement = new EventEmitter<Contract>();
+
+  openAgreementModal(contract: Contract): void {
+    this.generateAgreement.emit(contract);
+  }
+
+  @Input()
+  contracts: Contract[] = [];
+
+  displayedColumns: string[] = [
+    'contractNumber',
+    'debtorName',
+    'institutionName',
+    'contractAmount',
+    'debtAmount',
     'actions'
   ];
-
-  dataSource = [
-    {
-      customer: 'João Silva',
-      document: '123.456.789-00',
-      contract: 'CTR-1001',
-      balance: 'R$ 2.450,00',
-      status: 'Em aberto'
-    },
-    {
-      customer: 'Maria Souza',
-      document: '987.654.321-00',
-      contract: 'CTR-1002',
-      balance: 'R$ 1.250,00',
-      status: 'Negociado'
-    },
-    {
-      customer: 'Carlos Lima',
-      document: '456.789.123-00',
-      contract: 'CTR-1003',
-      balance: 'R$ 3.870,00',
-      status: 'Em atraso'
-    }
-  ];
-
 }

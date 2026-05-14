@@ -1,0 +1,103 @@
+<h2 mat-dialog-title>
+  Simulação de acordo
+</h2>
+
+<mat-dialog-content>
+
+  @if (loading)
+  {
+    <p>
+      Carregando simulação...
+    </p>
+  }
+
+  @if (!loading && simulation)
+  {
+    <div class="agreement-info">
+
+      <p>
+        <strong>Contrato:</strong>
+        {{ simulation.contractNumber }}
+      </p>
+
+      <p>
+        <strong>Instituição:</strong>
+        {{ simulation.institutionName }}
+      </p>
+
+      <p>
+        <strong>Dívida:</strong>
+        {{ simulation.openDebtAmount | currency:'BRL' }}
+      </p>
+
+      <p>
+        <strong>Parcelas:</strong>
+        {{ simulation.installments.length }}
+      </p>
+
+      <p>
+        <strong>Juros:</strong>
+        {{ simulation.applicableInterestRate * 100 }}%
+      </p>
+
+    </div>
+
+    <table class="installments-table">
+
+      <thead>
+        <tr>
+          <th>Parcela</th>
+          <th>Vencimento</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        @for (
+          installment of simulation.installments;
+          track installment.number
+        )
+        {
+          <tr>
+
+            <td>
+              {{ installment.number }}
+            </td>
+
+            <td>
+              {{ installment.dueDate | date:'dd/MM/yyyy' }}
+            </td>
+
+            <td>
+              {{ installment.amount | currency:'BRL' }}
+            </td>
+
+          </tr>
+        }
+
+      </tbody>
+
+    </table>
+  }
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+
+  <button
+    mat-button
+    (click)="cancel()"
+  >
+    Cancelar
+  </button>
+
+  <button
+    mat-flat-button
+    [disabled]="creating || loading"
+    (click)="confirm()"
+  >
+    Confirmar acordo
+  </button>
+
+</mat-dialog-actions>

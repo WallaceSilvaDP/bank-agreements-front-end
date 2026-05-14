@@ -27,8 +27,8 @@ export const routes: Routes = [
       {
         path: 'agreements',
         loadComponent: () =>
-          import('./features/agreements/pages/agreement-page/agreement-page')
-            .then(c => c.AgreementPage)
+          import('./features/agreements/pages/agreement-page/agreement-list-page')
+            .then(c => c.AgreementListPage)
       },
       {
         path: 'billets',

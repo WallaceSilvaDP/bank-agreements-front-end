@@ -1,0 +1,17 @@
+.filter-card {
+  margin-bottom: 24px;
+
+  border-radius: 12px;
+}
+
+.filters {
+  display: flex;
+
+  gap: 16px;
+
+  align-items: center;
+}
+
+mat-form-field {
+  width: 250px;
+}

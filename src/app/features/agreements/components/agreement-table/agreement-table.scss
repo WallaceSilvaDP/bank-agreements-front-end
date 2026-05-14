@@ -1,0 +1,45 @@
+.filter-card {
+  margin-bottom: 24px;
+
+  border-radius: 12px;
+}
+
+.filters {
+  display: flex;
+
+  gap: 16px;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+
+mat-form-field {
+  width: 200px;
+}
+
+.search-button {
+  height: 56px;
+  padding: 0 24px;
+}
+
+.table-container {
+  background: white;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  font-weight: 600;
+}
+
+td,
+th {
+  padding: 16px;
+}

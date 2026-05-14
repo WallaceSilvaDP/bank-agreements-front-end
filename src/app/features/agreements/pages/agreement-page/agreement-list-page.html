@@ -1,6 +1,6 @@
 <app-page-header
-  [title]="'Contratos'"
-  [subtitle]="'Gerencie contratos e parcelas em aberto'"
+  [title]="'Acordos'"
+  [subtitle]="'Gerencie acordos e parcelas em aberto'"
 />
 
 <mat-card class="filter-card">
@@ -34,7 +34,7 @@
 
 </mat-card>
 
-<app-contract-table
-  [contracts]="contracts"
-  (generateAgreement)="openAgreementModal($event)"
+<app-agreement-table
+  [agreements]="agreements"
+  (view)="openViewDialog($event)"
 />

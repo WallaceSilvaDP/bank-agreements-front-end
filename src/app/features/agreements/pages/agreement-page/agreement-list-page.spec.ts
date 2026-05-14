@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AgreementPage } from './agreement-page';
+import { AgreementListPage } from './agreement-list-page';
 
-describe('AgreementPage', () => {
-  let component: AgreementPage;
-  let fixture: ComponentFixture<AgreementPage>;
+describe('AgreementListPage', () => {
+  let component: AgreementListPage;
+  let fixture: ComponentFixture<AgreementListPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AgreementPage]
+      imports: [AgreementListPage]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AgreementPage);
+    fixture = TestBed.createComponent(AgreementListPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
